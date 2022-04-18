@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -17,16 +16,6 @@ class CategoryCard extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
-          // raises the card slightly; depth effect
-          // TODO: read more about boxShadow
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 17),
-              blurRadius: 17,
-              spreadRadius: -23,
-              color: kShadowColor,
-            )
-          ],
         ),
         child: Material(
           color: Colors.transparent,

@@ -152,23 +152,20 @@ class SessionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: what is a layout builder & why do we need it?
+    // Layout Builder provides the parent widget's constraints
     return LayoutBuilder(builder: ((context, constraints) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(13),
         child: Container(
-          width: constraints.maxWidth / 2 -
-              10, // constraints.maxWidth provide us the available width for this widget
+          // constraints.maxWidth provide us parent widget's maxWidth
+          width: constraints.maxWidth / 2 - 10,
+          /* 
+          the following is not ideal since the size of screen changes 
+          across devices & -10 may not be constant
+          width: MediaQuery.of(context).size.width / 2 - 10,
+          */
           decoration: const BoxDecoration(
             color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 17),
-                blurRadius: 23,
-                spreadRadius: -17,
-                color: kShadowColor,
-              ),
-            ],
           ),
           child: Material(
             color: Colors.transparent,
